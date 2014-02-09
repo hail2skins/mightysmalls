@@ -11,11 +11,11 @@ Given(/^I can see a link to "(.*?)"$/) do |arg1|
 end
 
 Given(/^I can see a header with the "(.*?)" name$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  page.should have_css("header", text: "Mighty Smalls")
 end
 
 Given(/^I can see a footer with "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  page.should have_css("footer", text: "Hamco Internet Solutions")
 end
 
 Given(/^I can see navigation links for help, about, contact and sign in$/) do
