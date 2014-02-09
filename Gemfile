@@ -69,6 +69,8 @@ gem 'jquery-datatables-rails', git: 'https://github.com/rweng/jquery-datatables-
 
 gem 'bundler'
 
+gem 'unicorn'
+
 #for heroku setup, remove if off heroku
 gem 'rails_12factor', group: :production
 
