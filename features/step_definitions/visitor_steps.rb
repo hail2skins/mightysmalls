@@ -19,5 +19,24 @@ Given(/^I can see a footer with "(.*?)"$/) do |arg1|
 end
 
 Given(/^I can see navigation links for help, about, contact and sign in$/) do
-  pending # express the regexp above with the code you wish you had
+  h = "Help"
+  a = "About"
+  c = "Contact"
+  s = "Sign in"
+
+  [h,a,c,s].each do |link|
+  	page.should have_link(link)
+  end
+end
+
+Given(/^I am at the home page of the site$/) do
+  visit '/'
+end
+
+When(/^I click the "(.*?)" link$/) do |arg1|
+  click_link "About"
+end
+
+Then(/^I should see information about Mighty Smalls$/) do
+  page.should have_content("cost effective client management system")
 end

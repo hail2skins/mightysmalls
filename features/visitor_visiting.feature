@@ -12,3 +12,7 @@ Feature: Visitor Visiting
 		And I can see a footer with "Hamco Internet Solutions"
 		And I can see navigation links for help, about, contact and sign in
 	
+		Scenario: Visiting the about page
+			Given I am at the home page of the site
+			When I click the "About" link
+			Then I should see information about Mighty Smalls
