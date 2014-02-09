@@ -7,7 +7,5 @@ Feature: Visitor Visiting
 	Scenario: Visiting the home page
 		Given I am at the home page of the site as a guest
 		And I can see the site is in alpha testing
-		And I can see a link to sign up
-		And I can see links to help, about and contact
-		Then I can click help, about and contact links from the home page
-		
+		And I can see a link to "Sign up now!"
+	
