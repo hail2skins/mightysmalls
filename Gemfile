@@ -71,6 +71,11 @@ gem 'bundler'
 
 gem 'unicorn'
 
+
+gem "spring", group: :development
+gem "spring-commands-rspec", group: :development
+gem "spring-commands-cucumber"
+
 #for heroku setup, remove if off heroku
 gem 'rails_12factor', group: :production
 
