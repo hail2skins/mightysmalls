@@ -37,7 +37,11 @@ describe "visiting each link from the home page" do
 		page.should have_title("Contact")
 	end
 
-	pending "sign up page"
+	it "owners/new.html.erb" do
+		visit signup_path
+		page.should have_css('form', text: "")
+	end
+
 	pending "signin stuff"
 	
 end

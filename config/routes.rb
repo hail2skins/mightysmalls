@@ -1,5 +1,7 @@
 Mightysmalls::Application.routes.draw do
 
+  resources :owners
+
   root to: 'static_pages#home'
 
   get '/about',         to: 'static_pages#about'

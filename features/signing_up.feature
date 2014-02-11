@@ -7,6 +7,6 @@ Feature: Signing Up
 		Given I am at the home page of the site
 		When I click the "Sign up now!" link
 		Then I should see "Sign up" in the title
-		And see a form to fill in my information
+		And as a new "Owner" signing up there is a form to fill in my information
 		And when I submit my information
 		Then I should be created successfully and taken to my owner page

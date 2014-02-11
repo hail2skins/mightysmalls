@@ -79,4 +79,6 @@ gem "spring-commands-cucumber"
 #for heroku setup, remove if off heroku
 gem 'rails_12factor', group: :production
 
+gem 'bootstrap_form'
+
 ruby "2.0.0"
