@@ -6,3 +6,38 @@ describe "static_pages/home.html.erb" do
 		expect(controller.controller_path).to eq("static_pages")
 	end
 end
+
+describe "seeing the home page" do
+
+	it "should see links to help, contact, about and sign in" do
+		visit root_path
+		page.should have_link('About', href: about_path)
+		page.should have_link('Help', href: help_path)
+		page.should have_link('Contact', href: contact_path)
+		page.should have_link('Sign in', href: signin_path)
+		page.should have_link('Sign up now!', href: signup_path)
+	end
+end
+
+describe "visiting each link from the home page" do
+	before { visit root_path }
+
+	it "static_pages/help.html.erb" do
+		visit help_path
+		page.should have_title("Help")
+	end
+
+	it "static_pages/about.html.erb" do
+		visit about_path
+		page.should have_title("About")
+	end
+
+	it "static_pages/contact.html.erb" do
+		visit contact_path
+		page.should have_title("Contact")
+	end
+
+	pending "sign up page"
+	pending "signin stuff"
+	
+end
