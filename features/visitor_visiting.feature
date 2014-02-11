@@ -21,9 +21,9 @@ Feature: Visitor Visiting
 
 		Scenario: Visiting the help page
 			Given I click the "Help" link
-			Then I should see information about utilizing the site
+			Then I should see an "h1" with the world "Help"
 
 		Scenario: Visiting the contact page
 			Given I click the "Contact" link
-			Then I should how to contact Mighty Smalls support for assistance
+			Then I should see "Contact" in the title
 

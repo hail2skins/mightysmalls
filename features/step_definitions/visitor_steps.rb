@@ -2,7 +2,7 @@ Given(/^I visit "(.*?)" as a visitor$/) do |arg1|
   visit '/'
 end
 
-Given(/^I can see the site is in "(.*?)" testing$/) do |arg1|
+Given(/^I can see the site is in "(.*?)" testing$/) do |content|
   page.should have_content("ALPHA")
 end
 
@@ -33,18 +33,14 @@ Given(/^I am at the home page of the site$/) do
   visit '/'
 end
 
-When(/^I click the "(.*?)" link$/) do |arg1|
-  click_link "About"
-end
-
 Then(/^I should see information about the "cost effective client relationship management system"$/) do
   page.should have_content("cost effective client relationship management system ")
 end
 
-Then(/^I should see information about utilizing the site$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see an "h1" with the world "Help"/) do
+  page.should have_css('h1', text: "Help")
 end
 
-Then(/^I should how to contact Mighty Smalls support for assistance$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "Contact" in the title$/) do
+  page.should have_title("Contact")
 end
