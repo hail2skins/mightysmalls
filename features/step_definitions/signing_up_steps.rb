@@ -6,10 +6,10 @@ Then(/^as a new "Owner" signing up there is a form to fill in my information$/) 
   page.should have_css('form', text: "")
 end
 
-Then(/^when I submit my information$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^when I click the "(.*?)" button$/) do |button|
+  click_button(button)
 end
 
 Then(/^I should be created successfully and taken to my owner page$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content("Owner was successfully created.")
 end

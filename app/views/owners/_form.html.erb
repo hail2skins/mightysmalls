@@ -1,12 +1,14 @@
 <%= bootstrap_form_for(@owner) do |f| %>
 	<%= render 'shared/error_messages' %>
 
-	<%= f.text_field :first_name %>
+	<%= f.text_field :first_name, placeholder: "required" %>
 	<%= f.text_field :middle_name %>
-	<%= f.text_field :last_name %>
-	<%= f.email_field :email %>
-	<%= f.password_field :password %>
+	<%= f.text_field :last_name, placeholder: "required" %>
+	<%= f.email_field :email, placeholder: "required" %>
+	<%= f.password_field :password, placeholder: "required" %>
+	<%= f.password_field :password_confirmation, label: "Confirm Password", placeholder: "required" %>
 
+  <%= f.submit "Create my account", class: 'btn btn-lg btn-primary' %>
 
 
 
