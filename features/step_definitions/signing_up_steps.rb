@@ -19,4 +19,7 @@ end
 
 Then(/^I should be created successfully and taken to my owner page$/) do
   page.should have_content("Owner was successfully created.")
+  page.should have_content("You have not added a business.")
+  page.should have_link("Please click here to add your business!")
+  page.should have_title(@owner.name)
 end

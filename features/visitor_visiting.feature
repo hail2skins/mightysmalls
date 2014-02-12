@@ -16,14 +16,14 @@ Feature: Visitor Visiting
 		And I can see navigation links for help, about, contact and sign in
 	
 		Scenario: Visiting the about page
-			Given I click the "About" link
+			When I click the "About" link
 			Then I should see information about the "cost effective client relationship management system"
 
 		Scenario: Visiting the help page
-			Given I click the "Help" link
+			When I click the "Help" link
 			Then I should see an "h1" with the world "Help"
 
 		Scenario: Visiting the contact page
-			Given I click the "Contact" link
+			When I click the "Contact" link
 			Then I should see "Contact" in the title
 

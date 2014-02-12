@@ -17,4 +17,10 @@ describe Owner do
 
   pending "Do much more in this test"
 
+  describe '#name' do
+    it "should combine first_name and last_name" do
+      expect(@owner.name).to eq("Example User")
+    end
+  end
+
 end
