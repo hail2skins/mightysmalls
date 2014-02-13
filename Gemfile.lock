@@ -104,6 +104,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.4)
     multi_test (0.0.3)
+    newrelic_rpm (3.7.2.192)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
@@ -214,6 +215,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-datatables-rails!
   jquery-rails
+  newrelic_rpm
   pg
   rails (= 4.0.2)
   rails_12factor
