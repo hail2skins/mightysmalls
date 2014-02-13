@@ -71,6 +71,7 @@ gem 'bundler'
 
 gem 'unicorn'
 
+gem 'devise'
 
 gem "spring", group: :development
 gem "spring-commands-rspec", group: :development

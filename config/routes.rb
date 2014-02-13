@@ -1,14 +1,20 @@
 Mightysmalls::Application.routes.draw do
 
+
+  devise_for :owners
   resources :owners
+
+  devise_scope :owner do
+    get "/signup",        to: 'devise/registrations#new'
+    get "/login",         to: 'devise/sessions#new'
+    delete "/logout",     to: 'devise/sessions#destroy'
+  end
 
   root to: 'static_pages#home'
 
   get '/about',         to: 'static_pages#about'
   get '/help',          to: 'static_pages#help'
   get '/contact',       to: 'static_pages#contact'
-  get '/signup',        to: 'owners#new'
-  get '/signin',        to: 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
