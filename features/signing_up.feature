@@ -9,4 +9,5 @@ Feature: Signing Up
 		Then I should see "Sign up" in the title
 		And as a new "Owner" signing up there is a form to fill in my information
 		And when I click the "Create my account" button
-		Then I should be created successfully and taken to my owner page
+		Then I should be created successfully
+		And be taken to my owner profile page

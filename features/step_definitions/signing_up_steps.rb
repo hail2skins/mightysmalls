@@ -17,8 +17,11 @@ Then(/^when I click the "(.*?)" button$/) do |button|
   click_button(button)
 end
 
-Then(/^I should be created successfully and taken to my owner page$/) do
-  page.should have_content("Owner was successfully created.")
+Then(/^I should be created successfully$/) do
+  page.should have_content("Welcome! You have signed up successfully.")
+end
+
+Then(/^be taken to my owner profile page$/) do
   page.should have_content("You have not added a business.")
   page.should have_link("Please click here to add your business!")
   page.should have_title(@owner.name)

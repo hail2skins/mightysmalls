@@ -18,7 +18,7 @@ Given(/^I can see a footer with "(.*?)"$/) do |arg1|
   page.should have_css("footer", text: "Hamco Internet Solutions")
 end
 
-Given(/^I can see navigation links for help, about, contact and sign in$/) do
+Given(/^I can see navigation links for help, about, contact and login$/) do
   h = "Help"
   a = "About"
   c = "Contact"

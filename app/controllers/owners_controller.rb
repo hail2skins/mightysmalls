@@ -1,8 +1,11 @@
 class OwnersController < ApplicationController
-
+  before_action :set_owner, only: [:show, :edit, :update, :destroy]
 
 	def new
 		@owner = Owner.new
+	end
+
+	def show
 	end
 
 	def create
@@ -21,6 +24,10 @@ class OwnersController < ApplicationController
 
 	private
 
+		def set_owner
+			@owner = Owner.find(params[:id])
+		end	
+
 		def owner_params
 			params.require(:owner).permit(:first_name, 
 																		:middle_name,
@@ -29,5 +36,8 @@ class OwnersController < ApplicationController
 																		:password, 
 																		:password_confirmation)
 		end	
+
+
+
 
 end

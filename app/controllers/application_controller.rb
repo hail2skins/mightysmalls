@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   #supplied method by device
-  #def after_sign_in_path_for(resource)
-  #	current_owner
-	#end
+  def after_sign_in_path_for(resource)
+  	current_owner
+	end
 end
