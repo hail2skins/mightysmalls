@@ -6,10 +6,12 @@
       	<b>Personal Information</b>
       </div>
       <div class="panel-body">
-        <b>Owner: </b>Art Mills
+        <b>Owner: </b>
+        <%= link_to @owner.name %>
       </div>
       <div class="panel-body">
-        <b>Email: </b>Something@butnotforpublic.view
+        <b>Email: </b>
+        <%= @owner.email %>
       </div>
       <div class="panel-body">
       <address>
@@ -19,6 +21,21 @@
       </address>
       </div>
     </div>
+  </div>
    
-	</div>
+	<div class="col-md-7">
+  	<div class="panel panel-danger">
+      <div class="panel-heading">
+        <b>Business information</b>
+      </div>
+      <div class="panel-body">
+      	<p>You have not yet provided us information about your business.</p>
+      	<p>Testing here.</p>
+      </div>
+
+    </div>
+   </div>
+
+
+
 </div>

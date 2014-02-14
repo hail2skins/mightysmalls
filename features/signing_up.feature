@@ -11,3 +11,4 @@ Feature: Signing Up
 		And when I click the "Create my account" button
 		Then I should be created successfully
 		And be taken to my owner profile page
+		And I should be informed I need to add a business
