@@ -14,7 +14,7 @@ describe "seeing the home page" do
 		page.should have_link('About', href: about_path)
 		page.should have_link('Help', href: help_path)
 		page.should have_link('Contact', href: contact_path)
-		page.should have_link('Sign in', href: signin_path)
+		page.should have_link('Login', href: login_path)
 		page.should have_link('Sign up now!', href: signup_path)
 	end
 end

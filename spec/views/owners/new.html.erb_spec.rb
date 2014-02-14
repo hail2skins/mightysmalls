@@ -22,8 +22,8 @@ describe "signup" do
 			fill_in "Middle name", 						with: ""
 			fill_in "Last name", 							with: "User"
 			fill_in "Email", 									with: "user@example.com"
-			fill_in "Password",								with: "password"
-			fill_in "Confirm Password", 			with: "password"
+			fill_in "Password",								with: "password", match: :prefer_exact
+			fill_in "Confirm Password", 			with: "password", match: :prefer_exact
 		end
 
 		it "should create an owner" do
