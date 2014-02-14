@@ -22,7 +22,7 @@ Given(/^I can see navigation links for help, about, contact and sign in$/) do
   h = "Help"
   a = "About"
   c = "Contact"
-  s = "Sign in"
+  s = "Login"
 
   [h,a,c,s].each do |link|
   	page.should have_link(link)
