@@ -4,7 +4,8 @@ class Owner < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+  validates_presence_of :first_name
+  validates_presence_of :last_name
 
  #simple interpolation with first and last name to a string on a name call.
   def name

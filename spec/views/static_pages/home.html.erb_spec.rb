@@ -37,11 +37,17 @@ describe "visiting each link from the home page" do
 		page.should have_title("Contact")
 	end
 
-	it "owners/new.html.erb" do
+	it "devise/registrations/new.html.erb" do
 		visit signup_path
 		page.should have_css('form', text: "")
+		page.should have_title("Sign up")
 	end
 
-	pending "signin stuff"
+	it "devise/sessions/new.html.erb" do
+		visit login_path
+		page.should have_title("Login")
+		page.should have_link("Sign up")
+		page.should have_link("Forgot your password?")
+	end
 	
 end
