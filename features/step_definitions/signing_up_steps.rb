@@ -1,5 +1,9 @@
-Then(/^I should see "Sign up" in the title$/) do
+Given(/^I should see "Sign up" in the title$/) do
   page.should have_title("Sign up")
+end
+
+Given(/^I see a link to "(.*?)"$/) do |link|
+  page.should have_link(link)
 end
 
 Then(/^as a new "Owner" signing up there is a form to fill in my information$/) do
@@ -22,11 +26,19 @@ Then(/^I should be created successfully$/) do
 end
 
 Then(/^be taken to my owner profile page$/) do
-  @owner = Owner.create!(email: 'testing@testing.testing', password: 'password', password_confirmation: 'password', first_name: "Hello", last_name: "There")
-  should have_title(@owner.name)
-  should have_link(@owner.name)
+  page.should have_title("Someone New")
+  page.should have_link("Someone New")
+  page.should have_content("test@test.com")
 end
 
 Then(/^I should be informed I need to add a business$/) do
   page.should have_content("You have not yet provided us information about your business.")
+end
+
+When(/^I should see a form to login$/) do
+  page.should have_css('form', text: "")
+end
+
+Then(/^I should see the title "(.*?)"$/) do |arg1|
+  page.should have_title("Login")
 end
