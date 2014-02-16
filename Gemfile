@@ -83,4 +83,6 @@ gem 'newrelic_rpm'
 
 gem 'bootstrap_form'
 
+gem 'font-awesome-rails'
+
 ruby "2.0.0"

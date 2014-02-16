@@ -11,7 +11,7 @@ Feature: login
 
     Scenario: owner signs in successfully
       Given I exist as a owner
-        And I am not logged in
+      And I am not logged in
       When I login with valid credentials
       Then I see a successful login message
       When I return to the site
