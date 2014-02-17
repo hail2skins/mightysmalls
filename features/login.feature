@@ -4,10 +4,10 @@ Feature: login
   Should be able to login
 
     Scenario: owner is not signed up
-      Given I do not exist as a owner
+      Given I do not exist as an owner
       When I login with valid credentials
       Then I see an invalid login message
-        And I should be signed out
+      And I should be signed out
 
     Scenario: owner signs in successfully
       Given I exist as a owner
