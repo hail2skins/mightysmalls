@@ -3,7 +3,14 @@ Feature: Editing Owner
   I want to edit my Owner profile
   so I can change my information
 
-  Scenario: I sign in and edit my account
-    Given I am logged in
-    When I edit my account details
-    Then I should see an account edited message
+  Background: Logging in
+  	Given I am logged in
+  	And I am at my owner profile page
+
+  Scenario: I edit my account
+  	And I can see a link to "Edit"
+  	When I click the "Edit" link
+    Then I should see a form to edit my information
+    When I fill in "Email" with "anothertest@testing.com"
+    And when I click the "Edit" button
+    Then I should see "Account edited successfully"

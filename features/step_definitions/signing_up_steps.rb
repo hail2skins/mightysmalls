@@ -2,10 +2,6 @@ Given(/^I should see "Sign up" in the title$/) do
   page.should have_title("Sign up")
 end
 
-Given(/^I see a link to "(.*?)"$/) do |link|
-  page.should have_link(link)
-end
-
 Then(/^as a new "Owner" signing up there is a form to fill in my information$/) do
   page.should have_css('form', text: "")
 
