@@ -6,10 +6,6 @@ Given(/^I can see the site is in "(.*?)" testing$/) do |content|
   page.should have_content("ALPHA")
 end
 
-Given(/^I can see a link to "(.*?)"$/) do |arg1|
-  page.should have_content("Sign up now!")
-end
-
 Given(/^I can see a header with the "(.*?)" name$/) do |arg1|
   page.should have_css("header", text: "Mighty Smalls")
 end
