@@ -7,5 +7,6 @@ FactoryGirl.define do
 		f.email 'factory@girl.com'
 		f.password 'password'
 		f.password_confirmation 'password'
+		admin false
 	end
 end

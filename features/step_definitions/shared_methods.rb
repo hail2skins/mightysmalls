@@ -7,7 +7,7 @@
 end
 
 def find_owner
-  @owner ||= owner.where(:email => @visitor[:email]).first
+  @owner ||= Owner.where(:email => @visitor[:email]).first
 end
 
 def create_unconfirmed_owner
@@ -20,14 +20,15 @@ end
  def create_owner
   create_visitor
   delete_owner
-  @owner = Owner.create!(:owner, @visitor)
+  @owner = FactoryGirl.create(:owner, @visitor)
 end
 
 def delete_owner
-  @owner ||= owner.where(:email => @visitor[:email]).first
+  @owner ||= Owner.where(:email => @visitor[:email]).first
   @owner.destroy unless @owner.nil?
 end
 
+#do i need this method at all?
 def sign_up
   delete_owner
   visit '/signup'

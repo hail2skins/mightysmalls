@@ -1,6 +1,9 @@
+include Warden::Test::Helpers
+Warden.test_mode!
+
 ### GIVEN ###
 Given /^I am not logged in$/ do
-  visit logout_path
+  logout(:owner)
 end
 
 Given /^I am logged in$/ do
@@ -13,7 +16,6 @@ Given /^I exist as a owner$/ do
 end
 
 Given /^I do not exist as an owner$/ do
-  save_and_open_page
   create_visitor
   delete_owner
 end
@@ -29,7 +31,7 @@ When /^I login with valid credentials$/ do
 end
 
 When /^I logout$/ do
-  visit logout_path
+  click_link("Logout")
 end
 
 When /^I sign up with valid owner data$/ do
@@ -62,7 +64,7 @@ When /^I sign up with a mismatched password confirmation$/ do
 end
 
 When /^I return to the site$/ do
-  visit '/'
+  visit owner_path(@owner)
 end
 
 When /^I login with a wrong email$/ do
@@ -82,7 +84,7 @@ Then /^I should be signed in$/ do
   page.should_not have_content "Login"
 end
 
-Then /^I should be signed out$/ do
+Then /^I should be logged out$/ do
   page.should have_content "Sign up"
   page.should have_content "Login"
   page.should_not have_content "Logout"
