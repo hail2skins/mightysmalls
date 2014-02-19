@@ -7,7 +7,7 @@
 end
 
 def find_owner
-  @owner ||= Owner.where(:email => @visitor[:email]).first
+  @owner ||= Owner.first
 end
 
 def create_unconfirmed_owner

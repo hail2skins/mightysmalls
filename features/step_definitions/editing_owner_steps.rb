@@ -1,7 +1,5 @@
 Given(/^I am at my owner profile page$/) do
-  page.should have_title(@owner.name)
-  page.should have_link(@owner.name)
-  page.should have_content(@owner.email)
+  assert page.current_path == owner_path(@owner)
 end
 
 Then(/^I should see a form to edit my information$/) do
@@ -22,5 +20,6 @@ end
 
 Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
+  save_and_open_page
 end
 
