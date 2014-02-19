@@ -18,3 +18,21 @@ Feature: Editing Owner
     And when I click the "Update" button
     Then I should see "You updated your account successfully."
     And I am at my owner profile page
+
+    Scenario: I edit my first and last names successfully
+      When I click the "Edit" link
+      And I fill in "First name" with "Roaster"
+      And I fill in "Last name" with "McRoasterton"
+      And when I fill in "Current password" with current password
+      And when I click the "Update" button
+      Then I should see "You updated your account successfully."
+      And I am at my owner profile page
+
+    Scenario: I edit my password successfully
+      When I click the "Edit" link
+      And I fill in "Password" with "password2"
+      And I fill in "Password confirmation" with "password2"
+      And when I fill in "Current password" with current password
+      And when I click the "Update" button
+      Then I should see "You updated your account successfully."
+      And I am at my owner profile page
