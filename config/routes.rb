@@ -1,7 +1,7 @@
 Mightysmalls::Application.routes.draw do
 
 
-  devise_for :owners
+  devise_for :owners, controllers: { registrations: :registrations }
   resources :owners
 
   devise_scope :owner do

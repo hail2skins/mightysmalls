@@ -5,13 +5,22 @@ Given(/^I am at my owner profile page$/) do
 end
 
 Then(/^I should see a form to edit my information$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_css('form', text: "")
 end
 
-When(/^I fill in "(.*?)" with "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see content "(.*?)"$/) do |content|
+  page.should have_content(content)
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I fill in "(.*?)" with "(.*?)"$/) do |form, data|
+  page.fill_in form, with: data
 end
+
+When(/^when I fill in "(.*?)" with current password$/) do |form|
+  page.fill_in form, with: @owner.password
+end
+
+Then(/^I should see "(.*?)"$/) do |content|
+  page.should have_content(content)
+end
+
