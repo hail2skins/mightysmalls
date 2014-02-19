@@ -8,6 +8,7 @@ Mightysmalls::Application.routes.draw do
     get "/signup",        to: 'devise/registrations#new'
     get "/login",         to: 'devise/sessions#new'
     delete "/logout",     to: 'devise/sessions#destroy'
+    get "/edit",          to: 'devise/registrations#edit'
   end
 
   root to: 'static_pages#home'

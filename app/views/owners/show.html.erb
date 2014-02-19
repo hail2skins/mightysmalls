@@ -3,11 +3,11 @@
 	<div class="col-md-3 col-md-offset-1">
   	<div class="panel panel-default">
     	<div class="panel-heading">
-      	<b>Personal Information</b>
+      	<b>Personal Information</b> <%= link_to "Edit", '/edit', class: 'pull-right' %>
       </div>
       <div class="panel-body">
         <b>Owner: </b>
-        <%= link_to @owner.name %>
+        <%= link_to @owner.name, '/edit' %>
       </div>
       <div class="panel-body">
         <b>Email: </b>
@@ -35,8 +35,5 @@
 
     </div>
    </div>
-
-<%= link_to "Edit", '#' %>
-
 
 </div>
