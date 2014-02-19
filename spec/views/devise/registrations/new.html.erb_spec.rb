@@ -12,7 +12,7 @@ describe "Owner pages" do
 end
 
 describe "signup" do
-	before { visit signup_path }
+	before { visit '/signup' }
 
 	let(:submit) { "Create my account" }
 
@@ -31,9 +31,18 @@ describe "signup" do
 		end
 	end
 
-
 	describe "signup with invalid information" do
-		pending "work this out"
+		it "should not create a user" do
+			expect { click_button submit}.not_to change(Owner, :count)
+		end
+
+		describe "after submission" do
+			before { click_button submit}
+
+			it { should have_selector('title', text: 'Sign up') }
+			it { should have_content('Please review the problems below:') }
+      it { should have_content("can\'t be blank") }
+     end
 	end
 
 end
