@@ -20,6 +20,7 @@ module Mightysmalls
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    
+    #to correct deprecated warning
+    config.i18n.enforce_available_locales = true
   end
 end
