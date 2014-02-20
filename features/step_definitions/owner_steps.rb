@@ -134,3 +134,87 @@ Then /^I should see my name$/ do
   create_owner
   page.should have_content @owner.name
 end
+
+#added by showing_owner.feature
+
+Then(/^I am at my owner edit page$/) do
+  page.should have_title("Edit #{@owner.name}")
+end
+
+Given(/^I can see my name in the title$/) do
+  page.should have_title("#{@owner.name}")
+end
+
+Given(/^I can see my name in a link$/) do
+  page.should have_link("#{@owner.name}")
+end
+
+#added by editing_owner.feature
+
+Given(/^I am at my owner profile page$/) do
+  assert page.current_path == owner_path(@owner)
+end
+
+Then(/^I should see a form to edit my information$/) do
+  page.should have_css('form', text: "")
+end
+
+Then(/^I should see content "(.*?)"$/) do |content|
+  page.should have_content(content)
+end
+
+When(/^I fill in "(.*?)" with "(.*?)"$/) do |form, data|
+  page.fill_in form, with: data
+end
+
+When(/^when I fill in "(.*?)" with current password$/) do |form|
+  page.fill_in form, with: @owner.password
+end
+
+Then(/^I should see "(.*?)"$/) do |content|
+  page.should have_content(content)
+  save_and_open_page
+end
+
+#added by signing_up.feature
+
+Given(/^I should see "Sign up" in the title$/) do
+  page.should have_title("Sign up")
+end
+
+Then(/^as a new "Owner" signing up there is a form to fill in my information$/) do
+  page.should have_css('form', text: "")
+
+  fill_in('Email', with: 'test@test.com')
+  fill_in('Password', with: 'password', match: :prefer_exact)
+  fill_in('Confirm Password', with: 'password', match: :prefer_exact)
+  fill_in('First name', with: 'Someone')
+  fill_in('Middle name', with: '')
+  fill_in('Last name', with: 'New')
+end
+
+Then(/^when I click the "(.*?)" button$/) do |button|
+  click_button(button)
+end
+
+Then(/^I should be created successfully$/) do
+  page.should have_content("Welcome! You have signed up successfully.")
+end
+
+Then(/^be taken to my owner profile page$/) do
+  page.should have_title("Someone New")
+  page.should have_link("Someone New")
+  page.should have_content("test@test.com")
+end
+
+Then(/^I should be informed I need to add a business$/) do
+  page.should have_content("You have not yet provided us information about your business.")
+end
+
+When(/^I should see a form to login$/) do
+  page.should have_css('form', text: "")
+end
+
+Then(/^I should see the title "(.*?)"$/) do |arg1|
+  page.should have_title("Login")
+end
