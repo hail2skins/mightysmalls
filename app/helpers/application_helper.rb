@@ -5,7 +5,7 @@ module ApplicationHelper
     return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)
     messages = resource.errors[:base].map { |msg| content_tag(:p, msg) }.join
     html = <<-HTML
-    <div class="alert alert-error alert-block">
+    <div class="alert alert-danger alert-block">
       <button type="button" class="close" data-dismiss="alert">&#215;</button>
       #{messages}
     </div>
@@ -15,7 +15,7 @@ module ApplicationHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "Mighty Smalls CRM"
+    base_title = "Mighty Smalls "
     if page_title.empty?
       base_title
     else

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Owner pages" do
 	subject { page }
 
-  describe "owners/new.html.erb" do
+  describe "devise/registrations/new.html.erb" do
   	before { visit signup_path }
 
   	it { should have_content('Sign up')}
@@ -16,7 +16,8 @@ describe "signup" do
 
 	let(:submit) { "Create my account" }
 
-	describe "with valid information" do
+
+  describe "with valid information" do
 	  before do
 			fill_in "First name", 						with: "Example"
 			fill_in "Middle name", 						with: ""
@@ -31,18 +32,22 @@ describe "signup" do
 		end
 	end
 
-	describe "signup with invalid information" do
-		it "should not create a user" do
-			expect { click_button submit}.not_to change(Owner, :count)
+	describe "with invalid information" do
+		
+		it "should not create an owner" do
+			expect { click_button submit }.not_to change(Owner, :count)
 		end
 
-		describe "after submission" do
-			before { click_button submit}
+		it "should have certain page attributes" do
+			click_button submit
+			page.should have_content("Sign up")
+			page.should have_content("Please review the problems below:")
+			page.should have_content("can't be blank")
+		end
+	end
 
-			it { should have_selector('title', text: 'Sign up') }
-			it { should have_content('Please review the problems below:') }
-      it { should have_content("can\'t be blank") }
-     end
+	describe "owner with the same email as an already registered owner" do
+		it "should have the content already registered"
 	end
 
 end
