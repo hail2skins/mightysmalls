@@ -26,6 +26,7 @@
 #  locked_at              :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  deleted_at             :datetime
 #
 
 class Owner < ActiveRecord::Base
@@ -41,5 +42,15 @@ class Owner < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}".to_s   
   end  
+
+  #prevent real deletions in conjunction with registrations_controller code
+  def soft_delete
+  	update_attribute(:deleted_at, Time.current)
+  end
+
+  #prevent soft_delete owners from logging back in
+  def active_for_authentication?
+  	super && !deleted_at
+  end
          
 end
