@@ -12,9 +12,6 @@ class OwnersController < ApplicationController
       params.require(:owner).permit(:first_name, :last_name, :middle_name, :email, :password, :password_confirmation)
     end
 
-
-
-
 		def set_owner
 			@owner = Owner.find(params[:id])
 		end	
