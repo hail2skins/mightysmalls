@@ -52,5 +52,9 @@ class Owner < ActiveRecord::Base
   def active_for_authentication?
   	super && !deleted_at
   end
+
+  def inactive_message
+    !deleted_at? ? super : "This account was deleted on #{deleted_at.to_date}.  Contact support for assistance."
+  end
          
 end

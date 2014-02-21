@@ -173,7 +173,6 @@ end
 
 Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
-  save_and_open_page
 end
 
 #added by signing_up.feature
@@ -215,6 +214,27 @@ When(/^I should see a form to login$/) do
   page.should have_css('form', text: "")
 end
 
-Then(/^I should see the title "(.*?)"$/) do |arg1|
-  page.should have_title("Login")
+Then(/^I should see the title "(.*?)"$/) do |title|
+  page.should have_title(title)
+end
+
+#deleting_owners.feature
+Then(/^a prompt asks "(.*?)"$/) do |content|
+  page.driver.console_messages.first
+end
+
+When(/^I cancel popup$/) do
+  page.driver.accept_js_confirms!
+end
+
+Then(/^I am at the home page$/) do
+  page.should have_title("Mighty Smalls")
+end
+
+When(/^I fill in "(.*?)" with my owner email$/) do |email|
+  page.fill_in email, with: @owner.email
+end
+
+When(/^I fill in "(.*?)" with my owner password$/) do |password|
+  page.fill_in password, with: @owner.password
 end

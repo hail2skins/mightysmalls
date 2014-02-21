@@ -47,10 +47,12 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'rspec-rails', group: [:development, :test]
 
 gem 'capybara', group: [:development, :test]
+gem 'capybara-webkit', group: [:development, :test]
 
 gem 'factory_girl_rails', group: [:development, :test]
 
 gem 'cucumber-rails', require: false, group: [:development, :test]
+gem 'selenium-webdriver', group: [:development, :test]
 
 gem 'database_cleaner', group: :test
 
