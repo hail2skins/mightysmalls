@@ -82,6 +82,7 @@ gem "spring-commands-cucumber"
 #for heroku setup, remove if off heroku
 gem 'rails_12factor', group: :production
 gem 'newrelic_rpm'
+gem 'foreman', group: [:development, :test]
 
 gem 'bootstrap_form'
 

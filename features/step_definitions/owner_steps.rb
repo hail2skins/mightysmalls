@@ -223,7 +223,7 @@ Then(/^a prompt asks "(.*?)"$/) do |content|
   page.driver.console_messages.first
 end
 
-When(/^I cancel popup$/) do
+When(/^I accept popup$/) do
   page.driver.accept_js_confirms!
 end
 

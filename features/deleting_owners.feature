@@ -16,7 +16,7 @@ Feature: Deleting Owners
   	And I can see a link to "Cancel my account"
   	When I click the "Cancel my account" link
  		Then a prompt asks "Are you sure?"
- 		When I cancel popup
+ 		When I accept popup
  		Then I am at the home page
  		And I should see "Bye! Your account was successfully cancelled. We hope to see you again soon."
  		And I can see a link to "Login"

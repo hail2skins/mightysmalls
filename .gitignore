@@ -25,4 +25,5 @@
 /db/seeds.rb
 
 .env
+Procfile
 
