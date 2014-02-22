@@ -21,6 +21,7 @@ end
   create_visitor
   delete_owner
   @owner = FactoryGirl.create(:owner, @visitor)
+  @owner.confirm!
 end
 
 def delete_owner

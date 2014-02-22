@@ -11,8 +11,14 @@ Feature: Signing Up
 	  	Then I should see "Sign up" in the title
 	  	And as a new "Owner" signing up there is a form to fill in my information
 	  	And when I click the "Create my account" button
-	  	Then I should be created successfully
-	  	And be taken to my owner profile page
+	  	Then I should see "Please open the link to activate your account."
+	  	When I confirm my new email
+	  	Then I am at the home page of the site
+	  	When I click the "Login" link
+	  	And I fill in "Email" with "test@test.com"
+	  	And I fill in "Password" with "password"
+	  	And when I click the "Login" button
+	  	Then I am at my owner profile page
 	  	And I should be informed I need to add a business
 
 	  Scenario: Checking the Login link

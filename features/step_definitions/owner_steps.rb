@@ -175,6 +175,19 @@ Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
 end
 
+Then(/^I visit my owner page$/) do
+  visit '/'
+end
+
+When(/^I confirm my new email$/) do
+  find_owner
+  @owner.confirm!
+end
+
+Then(/^I can see my email is "(.*?)"$/) do |newmail|
+  page.should have_content(@owner.email)
+end
+
 #added by signing_up.feature
 
 Given(/^I should see "Sign up" in the title$/) do
