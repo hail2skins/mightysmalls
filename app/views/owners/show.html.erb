@@ -26,11 +26,12 @@
 	<div class="col-md-7">
   	<div class="panel panel-danger">
       <div class="panel-heading">
-        <b>Business information</b>
+        <b>Business Information</b>
       </div>
       <div class="panel-body">
+      	<p>Thank you for signing up.   We will need information about your business for you to proceed.</p>
       	<p>You have not yet provided us information about your business.</p>
-      	<p>Testing here.</p>
+        <p><%= link_to "Add your business now!", new_owner_business_path(@owner) %></p>
       </div>
 
     </div>

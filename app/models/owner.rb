@@ -36,6 +36,8 @@ class Owner < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
+  has_many :businesses
+
   validates_presence_of :first_name
   validates_presence_of :last_name
 

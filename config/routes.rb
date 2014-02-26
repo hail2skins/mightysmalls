@@ -2,7 +2,10 @@ Mightysmalls::Application.routes.draw do
 
 
   devise_for :owners, controllers: { registrations: :registrations }
-  resources :owners
+  
+  resources :owners do
+    resources :businesses
+  end
 
   devise_scope :owner do
     get "/signup",        to: 'devise/registrations#new'

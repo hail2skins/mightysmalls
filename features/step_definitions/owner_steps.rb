@@ -251,3 +251,8 @@ end
 When(/^I fill in "(.*?)" with my owner password$/) do |password|
   page.fill_in password, with: @owner.password
 end
+
+#owner_creates_business.feature adds
+Then(/^I can see a form to add business information$/) do
+  pending # express the regexp above with the code you wish you had
+end
