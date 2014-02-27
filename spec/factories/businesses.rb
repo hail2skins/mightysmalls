@@ -14,9 +14,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :business do
-    name "MyString"
-    description "MyText"
-    deleted_at "2014-02-26 04:40:38"
+  factory :business do |f|
+    f.name "Second Business"
+    f.description "My amazing business"
   end
 end

@@ -256,3 +256,7 @@ end
 Then(/^I can see a form to add business information$/) do
   page.should have_css('form', text: "")
 end
+
+Then(/^I can see my "(.*?)" in a link$/) do |businessname|
+  page.should have_link(@owner.businesses.name)
+end

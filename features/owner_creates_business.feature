@@ -20,5 +20,14 @@ Feature: Owner creates business
   		Then I should see content "Congratulations.  Your business has been created."
   		And I am at my owner profile page
   		And I should see content "Test Business"
-
-  		
+  		And I can see my "business name" in a link
+  		And I can see a link to "Add another business"
+  		When I click the "Add another business" link
+  		Then I can see a form to add business information
+  		And I should see the title "Create a business"
+  		When I fill in "Business name" with "Test Business 2"
+  		And I fill in "Description" with "Cool business"
+  		And when I click the "Create my account" button
+  		Then I should see content "Congratulations.  Your business has been created."
+  		And I am at my owner profile page
+  		And I can see a link to "Test Business 2"

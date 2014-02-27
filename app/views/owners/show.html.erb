@@ -38,7 +38,7 @@
   <% else %>
     <div class="panel panel-success">
       <div class="panel-heading">
-        <b>Business Information</b>
+        <b>Business Information</b> <%= link_to "Add another business", new_owner_business_path(@owner), class: 'pull-right' %>
       </div>
       <div class="panel-body">
         <% @owner.businesses.each do |business| %>

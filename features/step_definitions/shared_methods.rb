@@ -48,4 +48,3 @@ def login
   fill_in "owner_password", :with => @visitor[:password]
   click_button "Login"
 end
-
