@@ -254,5 +254,5 @@ end
 
 #owner_creates_business.feature adds
 Then(/^I can see a form to add business information$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_css('form', text: "")
 end

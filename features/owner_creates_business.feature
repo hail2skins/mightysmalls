@@ -13,4 +13,11 @@ Feature: Owner creates business
 		  And I can see a link to "Add your business now!"
   		When I click the "Add your business now!" link
   		Then I can see a form to add business information
+  		And I should see the title "Create a business"
+  		When I fill in "Business name" with "Test Business"
+  		And I fill in "Description" with "Aesthetics"
+  		And when I click the "Create my account" button
+  		Then I should see content "Congratulations.  Your business has been created."
+  		And I am at my owner profile page
+
   		
