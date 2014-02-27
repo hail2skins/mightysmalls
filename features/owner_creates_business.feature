@@ -19,5 +19,6 @@ Feature: Owner creates business
   		And when I click the "Create my account" button
   		Then I should see content "Congratulations.  Your business has been created."
   		And I am at my owner profile page
+  		And I should see content "Test Business"
 
   		

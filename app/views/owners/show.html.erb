@@ -24,6 +24,7 @@
   </div>
    
 	<div class="col-md-7">
+  <% if @owner.businesses.count == 0 %>
   	<div class="panel panel-danger">
       <div class="panel-heading">
         <b>Business Information</b>
@@ -33,8 +34,23 @@
       	<p>You have not yet provided us information about your business.</p>
         <p><%= link_to "Add your business now!", new_owner_business_path(@owner) %></p>
       </div>
-
     </div>
-   </div>
+  <% else %>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <b>Business Information</b>
+      </div>
+      <div class="panel-body">
+        <% @owner.businesses.each do |business| %>
+          <%= link_to "Manage #{business.name}", owner_business_path(@owner, business) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+
+
+
+  </div>
 
 </div>
