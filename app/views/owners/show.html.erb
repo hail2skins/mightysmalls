@@ -1,29 +1,32 @@
 <%= provide(:title, "#{@owner.name} Profile Page") %>
 <div class="row">
-	<div class="col-md-3 col-md-offset-1">
+	<div class="col-md-2">
   	<div class="panel panel-default">
     	<div class="panel-heading">
-      	<b>Personal Information</b> <%= link_to "Edit", '/edit', class: 'pull-right' %>
+      	<b>Personal Information</b><%= link_to "Edit", '/edit', class: 'pull-right' %>
       </div>
       <div class="panel-body">
         <b>Owner: </b>
         <%= link_to @owner.name, '/edit' %>
-      </div>
-      <div class="panel-body">
+      <p>
         <b>Email: </b>
         <%= @owner.email %>
       </div>
+      <% if @owner.businesses.count > 0 %>
+      <div class="panel-heading">
+        <b>Business Information</b><%= link_to "Add", new_owner_business_path(@owner), class: 'pull-right' %>
+      </div>      
       <div class="panel-body">
-      <address>
-      	795 Folsom Ave, Suite 600<br>
-      	San Francisco, CA 94107<br> 
-      	<abbr title="Phone">P:</abbr> (123) 456-7890 
-      </address>
+        <% @owner.businesses.each do |business| %>
+          <b>Business:</b>
+          <%= link_to business.name, owner_business_path(@owner, business) %>
+        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
    
-	<div class="col-md-7">
+	<div class="col-md-10">
   <% if @owner.businesses.count == 0 %>
   	<div class="panel panel-danger">
       <div class="panel-heading">
@@ -36,14 +39,14 @@
       </div>
     </div>
   <% else %>
-    <div class="panel panel-success">
+    <div class="panel panel-danger">
       <div class="panel-heading">
-        <b>Business Information</b> <%= link_to "Add another business", new_owner_business_path(@owner), class: 'pull-right' %>
+        <b>Services Information</b>
       </div>
       <div class="panel-body">
-        <% @owner.businesses.each do |business| %>
-          <%= link_to "Manage #{business.name}", owner_business_path(@owner, business) %>
-        <% end %>
+       Ok.  Now, before we get to adding customers, we just need a little information about some of the services you will provide to them.   You can always add more later, but we'd like to get a couple business services and the prices you charge customers for those services here.
+       <p></p>
+       <p><%= link_to "Add a service your business provides now!", '#' %></p>
       </div>
     </div>
   <% end %>

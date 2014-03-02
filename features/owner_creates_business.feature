@@ -21,8 +21,11 @@ Feature: Owner creates business
   		And I am at my owner profile page
   		And I should see content "Test Business"
   		And I can see my "business name" in a link
-  		And I can see a link to "Add another business"
-  		When I click the "Add another business" link
+      And I should see content "Services Information"
+      And I should see content "we just need a little information about some of the services"
+      And I can see a link to "Add a service your business provides now!"
+  		And I can see a link to "Add"
+  		When I click the "Add" link
   		Then I can see a form to add business information
   		And I should see the title "Create a business"
   		When I fill in "Business name" with "Test Business 2"
