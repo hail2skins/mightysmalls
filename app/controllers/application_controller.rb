@@ -6,7 +6,10 @@ class ApplicationController < ActionController::Base
   #Devise requires this for strong parameters like behavior for additions to the model
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-
+  #Cancancan override to make owner permissions rather than user
+  def current_ability
+  	@current_ability ||= Ability.new(current_owner)
+  end
 
   #supplied method by device
   def after_sign_in_path_for(resource)

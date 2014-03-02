@@ -88,4 +88,6 @@ gem 'bootstrap_form'
 
 gem 'font-awesome-rails'
 
+gem 'cancancan'
+
 ruby "2.0.0"
