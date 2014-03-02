@@ -19,6 +19,9 @@ class BusinessesController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 
 	private
 

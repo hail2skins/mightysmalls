@@ -260,3 +260,18 @@ end
 Then(/^I can see my "(.*?)" in a link$/) do |businessname|
   page.should have_link(@owner.businesses.name)
 end
+
+#owner_shows_business.feature adds
+Given(/^I have created one business$/) do
+  create_business
+end
+
+When(/^I click the link to my business name$/) do
+  click_link(@owner.businesses.name)
+end
+
+Then(/^I am at my business show page$/) do
+  page.should have_title(@owner.businesses.name)
+end
+
+

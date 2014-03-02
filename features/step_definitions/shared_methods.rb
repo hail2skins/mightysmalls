@@ -48,3 +48,7 @@ def login
   fill_in "owner_password", :with => @visitor[:password]
   click_button "Login"
 end
+
+def create_business
+  @business = FactoryGirl.create(:business)
+end

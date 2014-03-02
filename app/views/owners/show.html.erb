@@ -18,7 +18,7 @@
       </div>      
       <div class="panel-body">
         <% @owner.businesses.each do |business| %>
-          <b>Business:</b>
+          <b>View:</b>
           <%= link_to business.name, owner_business_path(@owner, business) %>
         <% end %>
       </div>

@@ -10,6 +10,6 @@ Feature: Owner shows business
   	And I have created one business
 
   	Scenario: Showing my business page
-  		And I can see a "Manage my business" link
-  		When I click the "Manage my business" link
-  		I am at my business show page
+  		And I can see my "business name" in a link
+  		When I click the link to my business name
+  		Then I am at my business show page
