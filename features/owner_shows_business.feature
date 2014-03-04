@@ -6,10 +6,10 @@ Feature: Owner shows business
 
 	Background: Log in and create business
 	  Given I am logged in
-  	And I am at my owner profile page
-  	And I have created one business
-
+	  And I am at my owner profile page
+	  And I have created one business
+  	
   	Scenario: Showing my business page
-  		And I can see my "business name" in a link
-  		When I click the link to my business name
-  		Then I am at my business show page
+   		And I can see my business name in a link
+  		When I click the link with my business name
+  		Then I am at my business profile page

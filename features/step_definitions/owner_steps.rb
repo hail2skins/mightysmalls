@@ -266,12 +266,15 @@ Given(/^I have created one business$/) do
   create_business
 end
 
-When(/^I click the link to my business name$/) do
-  click_link(@owner.businesses.name)
+Given(/^I can see my business name in a link$/) do
+  puts @owner.businesses.count
+  page.should have_link(@business.name)
 end
 
-Then(/^I am at my business show page$/) do
-  page.should have_title(@owner.businesses.name)
+When(/^I click the link with my business name$/) do
+  pending # express the regexp above with the code you wish you had
 end
 
-
+Then(/^I am at my business profile page$/) do
+  pending # express the regexp above with the code you wish you had
+end

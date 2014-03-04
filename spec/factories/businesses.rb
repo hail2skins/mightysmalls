@@ -14,8 +14,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :business do |f|
-    f.name "Second Business"
-    f.description "My amazing business"
+  factory :business do
+  	name "My Big Business"
+    description "My amazing business"
+    owner
   end
 end

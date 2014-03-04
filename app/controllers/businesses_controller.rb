@@ -1,5 +1,6 @@
 class BusinessesController < ApplicationController
 	before_action :get_owner
+	before_action :set_business, only: [:show]
 
 
 	def new
@@ -24,6 +25,10 @@ class BusinessesController < ApplicationController
 
 
 	private
+
+			def set_business
+				@business = @owner.businesses.find(params[:id])
+			end
 
 			def business_params
 				params.require(:business).permit(:name, :description)
