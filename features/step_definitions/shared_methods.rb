@@ -50,5 +50,5 @@ def login
 end
 
 def create_business
-  @business = FactoryGirl.create(:business)
+  @business = @owner.businesses.create(name: "My Great Business", description: "Cool business, huh?")
 end

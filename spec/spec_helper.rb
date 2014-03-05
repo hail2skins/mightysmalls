@@ -43,4 +43,6 @@ RSpec.configure do |config|
 
   #adding capybara DSL to all areas of rspec instead of just features
   config.include Capybara::DSL
+
+  config.include FactoryGirl::Syntax::Methods
 end

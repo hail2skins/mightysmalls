@@ -264,10 +264,10 @@ end
 #owner_shows_business.feature adds
 Given(/^I have created one business$/) do
   create_business
+  visit root_path
 end
 
 Given(/^I can see my business name in a link$/) do
-  puts @owner.businesses.count
   page.should have_link(@business.name)
 end
 

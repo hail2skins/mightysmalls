@@ -15,8 +15,8 @@
 
 FactoryGirl.define do
   factory :business do
+  	owner
   	name "My Big Business"
     description "My amazing business"
-    owner
   end
 end
