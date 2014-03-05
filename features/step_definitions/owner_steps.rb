@@ -272,9 +272,13 @@ Given(/^I can see my business name in a link$/) do
 end
 
 When(/^I click the link with my business name$/) do
-  pending # express the regexp above with the code you wish you had
+  click_link(@business.name)
 end
 
 Then(/^I am at my business profile page$/) do
-  pending # express the regexp above with the code you wish you had
+  assert page.current_path == owner_business_path(@owner, @business)
+end
+
+Then(/^I should see my business name in the title$/) do
+  page.should have_title(@business.name)
 end
