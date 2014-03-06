@@ -282,3 +282,16 @@ end
 Then(/^I should see my business name in the title$/) do
   page.should have_title(@business.name)
 end
+
+#owner_edits_business.feature
+Given(/^I visit my business profile page$/) do
+  visit owner_business_path(@owner, @business)
+end
+
+Then(/^I am at my business edit page$/) do
+  assert page.current_path == edit_owner_business_path(@owner, @business)
+end
+
+Then(/^I should see "(.*?)" in the title$/) do |title|
+  page.should have_title(title)
+end

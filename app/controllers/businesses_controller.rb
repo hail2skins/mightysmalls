@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
 	before_action :get_owner
-	before_action :set_business, only: [:show]
+	before_action :set_business, only: [:show, :edit, :update]
 
 
 	def new
@@ -23,6 +23,18 @@ class BusinessesController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+
+	def update
+  	respond_to do |format|
+  		if @business.update(business_params)
+  			format.html { redirect_to @owner, notice: "Your business information has been successfully updated." }
+			else
+				format.html { render action: 'edit' }
+			end
+		end
+	end
 
 	private
 

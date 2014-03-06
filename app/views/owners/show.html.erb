@@ -17,9 +17,9 @@
         <b>Business Information</b><%= link_to "Add", new_owner_business_path(@owner), class: 'pull-right' %>
       </div>      
       <div class="panel-body">
-        <% @owner.businesses.each do |business| %>
+        <% @owner.businesses.order("created_at asc").each do |business| %>
           <b>View:</b>
-          <%= link_to business.name, owner_business_path(@owner, business) %>
+          <%= link_to business.name, owner_business_path(@owner, business) %><br>
         <% end %>
       </div>
       <% end %>

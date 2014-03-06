@@ -30,7 +30,7 @@ Feature: Owner creates business
   		And I should see the title "Create a business"
   		When I fill in "Business name" with "Test Business 2"
   		And I fill in "Description" with "Cool business"
-  		And when I click the "Create my account" button
+  		And when I click the "Submit my business information" button
   		Then I should see content "Congratulations.  Your business has been created."
   		And I am at my owner profile page
   		And I can see a link to "Test Business 2"

@@ -3,15 +3,15 @@
 	<div class="col-md-2">
   	<div class="panel panel-success">
     	<div class="panel-heading">
-      	<b>Business Information</b><%= link_to "Edit", '#', class: 'pull-right' %>
+      	<b>Business Information</b><%= link_to "Edit", edit_owner_business_path(@owner, @business), class: 'pull-right' %>
       </div>
       <div class="panel-body">
         <b>Business: </b>
-        <%= link_to @business.name, '#' %>
+        <%= link_to @business.name, edit_owner_business_path(@owner, @business) %>
       <p>
      </div>
     </div>
-      <%= link_to "Back to owner page", @owner %>
+    <%= link_to "Back to owner page", @owner %>
 
     </div>
   </div>
