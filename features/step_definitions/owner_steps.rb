@@ -190,9 +190,6 @@ end
 
 #added by signing_up.feature
 
-Given(/^I should see "Sign up" in the title$/) do
-  page.should have_title("Sign up")
-end
 
 Then(/^as a new "Owner" signing up there is a form to fill in my information$/) do
   page.should have_css('form', text: "")
@@ -290,8 +287,4 @@ end
 
 Then(/^I am at my business edit page$/) do
   assert page.current_path == edit_owner_business_path(@owner, @business)
-end
-
-Then(/^I should see "(.*?)" in the title$/) do |title|
-  page.should have_title(title)
 end
