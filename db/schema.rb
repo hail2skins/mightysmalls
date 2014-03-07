@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226054346) do
+ActiveRecord::Schema.define(version: 20140307035042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140226054346) do
     t.integer  "owner_id"
   end
 
+  add_index "businesses", ["deleted_at"], name: "index_businesses_on_deleted_at", using: :btree
   add_index "businesses", ["name"], name: "index_businesses_on_name", using: :btree
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
 
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140226054346) do
   end
 
   add_index "owners", ["confirmation_token"], name: "index_owners_on_confirmation_token", unique: true, using: :btree
+  add_index "owners", ["deleted_at"], name: "index_owners_on_deleted_at", using: :btree
   add_index "owners", ["email"], name: "index_owners_on_email", unique: true, using: :btree
   add_index "owners", ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true, using: :btree
   add_index "owners", ["unlock_token"], name: "index_owners_on_unlock_token", unique: true, using: :btree
