@@ -5,4 +5,8 @@ Feature: Owner deletes business
 	but, the business won't really delete.  Rather,
 	it will soft_delete so it is only viewable to admins.
 
-	
+		Background: Logging in and all that jazz
+		Given I am logged in
+	  And I am at my owner profile page
+	  And I have created one business
+	  And I visit my business profile page
