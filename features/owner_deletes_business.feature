@@ -10,3 +10,5 @@ Feature: Owner deletes business
 	  And I am at my owner profile page
 	  And I have created one business
 	  And I visit my business profile page
+
+	  Scenario: Soft delete of a business
