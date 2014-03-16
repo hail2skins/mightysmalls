@@ -4,4 +4,17 @@ Feature: Owner deletes business
 	I should be able to delete that business, but, 
 	it will only be soft deleted in reality.
 
-	Background: Logging on
+	Background: Logging in and all that jazz
+		Given I am logged in
+	  And I am at my owner profile page
+	  And I have created one business
+	  And I visit my business profile page
+
+	  @javascript
+	  Scenario: Owner soft deletes a business
+	  	And I can see a link to "Delete"
+	  	When I click the "Delete" link
+	  	Then a prompt asks "Are you sure?"
+ 			When I accept popup
+ 			Then I am at my owner profile page
+ 			And I should see "You have deleted this registered business."

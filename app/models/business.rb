@@ -12,6 +12,8 @@
 #
 
 class Business < ActiveRecord::Base
+	acts_as_paranoid
+	
 	belongs_to :owner
 
 	validates :owner_id, presence: true

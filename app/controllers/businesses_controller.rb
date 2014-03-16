@@ -1,6 +1,6 @@
 class BusinessesController < ApplicationController
 	before_action :get_owner
-	before_action :set_business, only: [:show, :edit, :update]
+	before_action :set_business, only: [:show, :edit, :update, :destroy]
 
 
 	def new
@@ -33,6 +33,13 @@ class BusinessesController < ApplicationController
 			else
 				format.html { render action: 'edit' }
 			end
+		end
+	end
+
+	def destroy
+		@business.destroy
+		respond_to do |format|
+			format.html { redirect_to @owner, notice: 'You have deleted this registered business.' }
 		end
 	end
 

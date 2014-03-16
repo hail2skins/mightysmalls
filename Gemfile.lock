@@ -136,6 +136,8 @@ GEM
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    paranoia (2.0.2)
+      activerecord (~> 4.0)
     pg (0.15.0)
     pg (0.15.0-x86-mingw32)
     polyglot (0.3.3)
@@ -258,6 +260,7 @@ DEPENDENCIES
   jquery-datatables-rails!
   jquery-rails
   newrelic_rpm
+  paranoia (~> 2.0)
   pg
   rails (= 4.0.2)
   rails_12factor

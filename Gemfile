@@ -90,4 +90,6 @@ gem 'font-awesome-rails'
 
 gem 'cancancan'
 
+gem 'paranoia', '~> 2.0'
+
 ruby "2.0.0"
