@@ -88,7 +88,7 @@ gem 'bootstrap_form'
 
 gem 'font-awesome-rails'
 
-gem 'cancancan'
+gem 'cancancan', '~> 1.7'
 
 gem 'paranoia', '~> 2.0'
 
