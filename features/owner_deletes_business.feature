@@ -18,3 +18,4 @@ Feature: Owner deletes business
  			When I accept popup
  			Then I am at my owner profile page
  			And I should see "You have deleted this registered business."
+
