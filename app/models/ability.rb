@@ -1,8 +1,20 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    # Define abilities for the passed in user here. For example:
+  def initialize(owner)
+    owner ||= Owner.new
+    alias_action :create, :read, :update, :destroy, to: :crud
+    if owner.admin?
+      can :manage, :all?
+    else
+      can :read, :static_pages
+      #can [:new, :delete], :sessions
+      can :show, Owner, id: owner.id
+      can :crud, Business, owner: { id: owner.id }
+    end
+
+
+          # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?
