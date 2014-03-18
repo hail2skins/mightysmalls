@@ -18,11 +18,11 @@ Feature: Deleting Owners
  		Then a prompt asks "Are you sure?"
  		When I accept popup
  		Then I am at the home page
- 		And I should see "Bye! Your account was successfully cancelled. We hope to see you again soon."
+ 		And I should see content "Bye! Your account was successfully cancelled. We hope to see you again soon."
  		And I can see a link to "Login"
  		When I click the "Login" link
  		Then I should see the title "Login"
  		When I fill in "Email" with my owner email
  		And I fill in "Password" with my owner password
  		When when I click the "Login" button
- 		Then I should see "This account was deleted on"
+ 		Then I should see content "This account was deleted on"

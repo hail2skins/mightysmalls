@@ -159,20 +159,8 @@ Then(/^I should see a form to edit my information$/) do
   page.should have_css('form', text: "")
 end
 
-Then(/^I should see content "(.*?)"$/) do |content|
-  page.should have_content(content)
-end
-
-When(/^I fill in "(.*?)" with "(.*?)"$/) do |form, data|
-  page.fill_in form, with: data
-end
-
 When(/^when I fill in "(.*?)" with current password$/) do |form|
   page.fill_in form, with: @owner.password
-end
-
-Then(/^I should see "(.*?)"$/) do |content|
-  page.should have_content(content)
 end
 
 Then(/^I visit my owner page$/) do
@@ -202,10 +190,6 @@ Then(/^as a new "Owner" signing up there is a form to fill in my information$/) 
   fill_in('Last name', with: 'New')
 end
 
-Then(/^when I click the "(.*?)" button$/) do |button|
-  click_button(button)
-end
-
 Then(/^I should be created successfully$/) do
   page.should have_content("Welcome! You have signed up successfully.")
 end
@@ -224,19 +208,7 @@ When(/^I should see a form to login$/) do
   page.should have_css('form', text: "")
 end
 
-Then(/^I should see the title "(.*?)"$/) do |title|
-  page.should have_title(title)
-end
-
 #deleting_owners.feature
-Then(/^a prompt asks "(.*?)"$/) do |content|
-  page.driver.console_messages.first
-end
-
-When(/^I accept popup$/) do
-  page.driver.accept_js_confirms!
-end
-
 Then(/^I am at the home page$/) do
   page.should have_title("Mighty Smalls")
 end

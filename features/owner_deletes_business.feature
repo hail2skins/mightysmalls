@@ -17,5 +17,5 @@ Feature: Owner deletes business
 	  	Then a prompt asks "Are you sure?"
  			When I accept popup
  			Then I am at my owner profile page
- 			And I should see "You have deleted this registered business."
+ 			And I should see content "You have deleted this registered business."
 
