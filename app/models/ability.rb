@@ -10,7 +10,7 @@ class Ability
       can :read, :static_pages
       #can [:new, :delete], :sessions
       can :show, Owner, id: owner.id
-      can :crud, Business, owner: { id: owner.id }
+      can :manage, Business, owner: { id: owner.id }
     end
 
 
