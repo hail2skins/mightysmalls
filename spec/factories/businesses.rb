@@ -16,7 +16,8 @@
 FactoryGirl.define do
   factory :business do
   	owner
-  	name "My Big Business"
+  	sequence(:name) { |n| "My Big Business #{n}" }
     description "My amazing business"
   end
 end
+

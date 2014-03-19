@@ -35,9 +35,9 @@ FactoryGirl.define do
 	factory :owner do
 		first_name 'Factory'
 		last_name 'Girl'
-		email 'factory@girl.com'
+		sequence(:email) { |n| "factory#{n}@girl.com" }
 		password 'password'
-		password_confirmation 'password'
+		password_confirmation { |o| o.password }
 		admin false
 		confirmed_at Time.now
 	end
