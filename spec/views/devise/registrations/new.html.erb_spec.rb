@@ -46,8 +46,4 @@ describe "signup" do
 		end
 	end
 
-	describe "owner with the same email as an already registered owner" do
-		it "should have the content already registered"
-	end
-
 end
