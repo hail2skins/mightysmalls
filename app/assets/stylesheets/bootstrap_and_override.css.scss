@@ -12,6 +12,7 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+
 /* universal */
 
 html {
@@ -98,7 +99,7 @@ table {
 
 .navbar-default .navbar-brand {
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 20px;
   font-size: 1.7em;
   color: white;
@@ -112,6 +113,10 @@ table {
     text-decoration: none;
   }
 }
+
+ .navbar-right {
+  padding-right: 25px;
+ }
 
 /* forms */
 
