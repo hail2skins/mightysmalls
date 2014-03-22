@@ -10,7 +10,7 @@ Feature: Visitor Visiting
 
 	Scenario: Viewing the home page
 		Given I can see the site is in "ALPHA" testing
-		And I can see a link to "Sign up now!"
+		And I should see a link to "Sign up now!"
 		And I can see a header with the "Mighty Smalls" name
 		And I can see a footer with "Hamco Internet Solutions"
 		And I can see navigation links for help, about, contact and login

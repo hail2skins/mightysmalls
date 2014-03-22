@@ -12,7 +12,7 @@ Feature: Owner deletes business
 
 	  @javascript
 	  Scenario: Owner soft deletes a business
-	  	And I can see a link to "Delete"
+	  	And I should see a link to "Delete"
 	  	When I click the "Delete" link
 	  	Then a prompt asks "Are you sure?"
  			When I accept popup

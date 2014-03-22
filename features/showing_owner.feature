@@ -8,11 +8,11 @@ I should have a profile page with key data
   	And I am at my owner profile page
 
   	Scenario: I can navigate links
-  		And I can see a link to "Account"
+  		And I should see a link to "Account"
   		When I click the "Account" link
-  		Then I can see a link to "Profile"
-  		And I can see a link to "Settings"
-  		And I can see a link to "Logout"
+  		Then I should see a link to "Profile"
+  		And I should see a link to "Settings"
+  		And I should see a link to "Logout"
   		When I click the "Profile" link
   		Then I am at my owner profile page
   		When I click the "Settings" link

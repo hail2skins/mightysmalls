@@ -8,7 +8,7 @@ Feature: Editing Owner
   	And I am at my owner profile page
 
   Scenario: I edit my email successfully
-  	And I can see a link to "Edit"
+  	And I should see a link to "Edit"
   	When I click the "Edit" link
     Then I should see a form to edit my information
     And I should see content "leave it blank if you don't want to change it"

@@ -10,7 +10,7 @@ Feature: Owner creates business
   	Scenario: Owner adds first business
 		  And I should see content "Business Information"
 		  And I should see content "You have not yet provided us information about your business."
-		  And I can see a link to "Add your business now!"
+		  And I should see a link to "Add your business now!"
   		When I click the "Add your business now!" link
   		Then I can see a form to add business information
   		And I should see the title "Create a business"
@@ -23,8 +23,8 @@ Feature: Owner creates business
   		And I can see my "business name" in a link
       And I should see content "Services Information"
       And I should see content "we just need a little information about some of the services"
-      And I can see a link to "Add a service your business provides now!"
-  		And I can see a link to "Add"
+      And I should see a link to "Add a service your business provides now!"
+  		And I should see a link to "Add"
   		When I click the "Add" link
   		Then I can see a form to add business information
   		And I should see the title "Create a business"
@@ -33,4 +33,4 @@ Feature: Owner creates business
   		And when I click the "Submit my business information" button
   		Then I should see content "Congratulations.  Your business has been created."
   		And I am at my owner profile page
-  		And I can see a link to "Test Business 2"
+  		And I should see a link to "Test Business 2"

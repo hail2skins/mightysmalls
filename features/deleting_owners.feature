@@ -13,13 +13,13 @@ Feature: Deleting Owners
   	Scenario: Cancelling my account
   	When I click the "Edit" link
   	Then I am at my owner edit page
-  	And I can see a link to "Cancel my account"
+  	And I should see a link to "Cancel my account"
   	When I click the "Cancel my account" link
  		Then a prompt asks "Are you sure?"
  		When I accept popup
  		Then I am at the home page
  		And I should see content "Bye! Your account was successfully cancelled. We hope to see you again soon."
- 		And I can see a link to "Login"
+ 		And I should see a link to "Login"
  		When I click the "Login" link
  		Then I should see the title "Login"
  		When I fill in "Email" with my owner email

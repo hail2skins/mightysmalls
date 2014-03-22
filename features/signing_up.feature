@@ -22,7 +22,7 @@ Feature: Signing Up
 	  	And I should be informed I need to add a business
 
 	  Scenario: Checking the Login link
-	  	And I can see a link to "Login"
+	  	And I should see a link to "Login"
 	  	When I click the "Login" link
 	  	Then I should see a form to login
 	  	And I should see the title "Login"

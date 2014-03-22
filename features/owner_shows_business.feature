@@ -14,6 +14,6 @@ Feature: Owner shows business
   		When I click the link with my business name
   		Then I am at my business profile page
   		And I should see my business name in the title
-  		And I can see a link to "Back to owner page"
+  		And I should see a link to "Back to owner page"
   		When I click the "Back to owner page" link
   		Then I am at my owner profile page
