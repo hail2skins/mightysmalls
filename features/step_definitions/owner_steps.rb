@@ -230,6 +230,10 @@ Then(/^I can see my "(.*?)" in a link$/) do |businessname|
   page.should have_link(@owner.businesses.name)
 end
 
+When(/^I fill in or select the category of my business$/) do
+  page.select('Aesthetics', from: 'selecttype')
+end
+
 #owner_shows_business.feature adds
 Given(/^I have created one business$/) do
   create_business

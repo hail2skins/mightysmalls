@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307035042) do
+ActiveRecord::Schema.define(version: 20140323044247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20140307035042) do
   add_index "businesses", ["deleted_at"], name: "index_businesses_on_deleted_at", using: :btree
   add_index "businesses", ["name"], name: "index_businesses_on_name", using: :btree
   add_index "businesses", ["owner_id"], name: "index_businesses_on_owner_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "business_id"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["business_id", "service_id"], name: "index_categories_on_business_id_and_service_id", unique: true, using: :btree
 
   create_table "owners", force: true do |t|
     t.string   "email",                  default: "",    null: false

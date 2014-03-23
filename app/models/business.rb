@@ -15,6 +15,7 @@ class Business < ActiveRecord::Base
 	acts_as_paranoid
 	
 	belongs_to :owner
+	has_one :category, as: :categorizations
 
 	validates :owner_id, presence: true
 	validates :name, presence: true
