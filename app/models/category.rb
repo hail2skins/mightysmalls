@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-	belongs_to :categorizations, polymorphic: true
+	belongs_to :business
 end
