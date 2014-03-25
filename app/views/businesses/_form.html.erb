@@ -4,7 +4,7 @@
 	<div class="form-inputs">
 		<%= f.input :name, label: "Business name", required: true %>
 		<%= f.input :description %>
-		<%= f.association :categories, label: "Business category", collection: Category.all(order: 'name') %>
+		<%= f.association :categories, as: :radio_buttons, label: "Business category", collection: Category.all(order: 'name') %>
 	</div>
 
 	<div class="form-actions">
