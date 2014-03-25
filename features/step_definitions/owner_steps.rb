@@ -231,7 +231,7 @@ Then(/^I can see my "(.*?)" in a link$/) do |businessname|
 end
 
 When(/^I fill in or select the category of my business$/) do
-  page.select('Aesthetics', from: 'selecttype')
+  page.select('Esthetics', from: 'selecttype')
 end
 
 #owner_shows_business.feature adds
