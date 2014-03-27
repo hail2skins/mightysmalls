@@ -14,7 +14,7 @@
 class Business < ActiveRecord::Base
 	acts_as_paranoid
 	
-	belongs_to :owner
+	has_one :owner
 	has_many :categories
 	accepts_nested_attributes_for :categories
 
