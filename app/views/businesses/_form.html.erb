@@ -4,9 +4,15 @@
 	<div class="form-inputs">
 		<%= f.input :name, label: "Business name", required: true %>
 		<%= f.input :description %>
-		<%= f.simple_fields_for @category do |category| %>
-		<%= category.collection_select :categories %>
+		<%= f.simple_fields_for :category do |category| %>
+			<%= category.select :category, Category.order('name') %>
 		<% end %>
+		
+
+
+
+
+		
 
 	</div>
 
